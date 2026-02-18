@@ -1,0 +1,335 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@plugin "daisyui" {
+  themes: forest --default, emerald --prefersdark;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+
+  /* One Earth–inspired palette */
+  --color-forest-900: #1B4332;
+  --color-forest-800: #2D6A4F;
+  --color-forest-700: #40916C;
+  --color-forest-600: #52B788;
+  --color-forest-500: #74C69D;
+  --color-forest-400: #95D5B2;
+  --color-forest-300: #B7E4C7;
+  --color-forest-200: #D8F3DC;
+  --color-forest-100: #F0FFF4;
+
+  --color-earth-700: #8B6914;
+  --color-earth-600: #A67C28;
+  --color-earth-500: #D4A373;
+  --color-earth-400: #E9C46A;
+  --color-earth-300: #FEFAE0;
+
+  --color-ocean-700: #0077B6;
+  --color-ocean-600: #0096C7;
+  --color-ocean-500: #48CAE4;
+  --color-ocean-400: #90E0EF;
+  --color-ocean-300: #CAF0F8;
+
+  --color-ember-600: #E76F51;
+  --color-ember-500: #F4845F;
+  --color-ember-400: #F4A261;
+
+  /* One Earth accent: warm cream/peach */
+  --color-cream: #F5E6D3;
+  --color-peach: #E8926F;
+  --color-warm-white: #FAF7F2;
+}
+
+:root {
+  --background: #1A2E1F;
+  --foreground: #FAF7F2;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* ============================
+   Typography — One Earth style
+   ============================ */
+.headline-xl {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.headline-lg {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.headline-md {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.body-lg {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.body-md {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* ============================
+   Map container
+   ============================ */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  z-index: 1;
+}
+
+/* ============================
+   Custom scrollbar
+   ============================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ============================
+   Glass card (for inner pages)
+   ============================ */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+}
+
+/* ============================
+   Content card — One Earth style
+   ============================ */
+.content-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.content-card .card-image {
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+}
+
+.content-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.content-card .card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+.content-card .card-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  min-height: 20rem;
+}
+
+/* ============================
+   Gradient text
+   ============================ */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-forest-400), var(--color-ocean-500));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================
+   Section spacing
+   ============================ */
+.section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* ============================
+   CTA button — One Earth peach/coral
+   ============================ */
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: var(--color-peach);
+  color: #1A2E1F;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-cta:hover {
+  background: #D47A5A;
+  transform: translateY(-1px);
+}
+
+/* Outlined variant */
+.btn-outline-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: var(--foreground);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-light:hover {
+  border-color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ============================
+   Fade-in animation
+   ============================ */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================
+   Tag badge
+   ============================ */
+.tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  background: rgba(116, 198, 157, 0.15);
+  border: 1px solid rgba(116, 198, 157, 0.3);
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  color: var(--color-forest-400);
+}
+
+/* ============================
+   Dropzone
+   ============================ */
+.dropzone {
+  border: 2px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.dropzone:hover,
+.dropzone.active {
+  border-color: var(--color-forest-500);
+  background: rgba(116, 198, 157, 0.05);
+}
+
+/* ============================
+   Data source badge
+   ============================ */
+.source-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.source-badge.owner {
+  background: rgba(116, 198, 157, 0.15);
+  color: var(--color-forest-400);
+}
+
+.source-badge.auto {
+  background: rgba(72, 202, 228, 0.15);
+  color: var(--color-ocean-500);
+}
+
+/* ============================
+   Step card hover
+   ============================ */
+.step-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-2px);
+}
+
+/* ============================
+   Impact counter — editorial style
+   ============================ */
+.impact-stat {
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.impact-stat:last-child {
+  border-right: none;
+}

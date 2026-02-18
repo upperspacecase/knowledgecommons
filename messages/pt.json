@@ -1,0 +1,292 @@
+{
+    "common": {
+        "siteTitle": "Knowledge Commons",
+        "tagline": "A sua terra, compreendida.",
+        "nav": {
+            "home": "Início",
+            "contribute": "Contribuir",
+            "directory": "Diretório"
+        },
+        "actions": {
+            "next": "Seguinte",
+            "back": "Voltar",
+            "submit": "Submeter",
+            "save": "Guardar",
+            "cancel": "Cancelar",
+            "copy": "Copiar Link",
+            "copied": "Copiado!",
+            "skip": "Pular este passo",
+            "edit": "Editar",
+            "download": "Descarregar",
+            "viewPassport": "Ver Passaporte",
+            "createPassport": "Contribua com a Sua Terra",
+            "exploreDirectory": "Explorar o Diretório",
+            "joinMovement": "Junte-se ao Movimento"
+        },
+        "units": {
+            "hectares": "hectares",
+            "acres": "acres"
+        }
+    },
+    "landing": {
+        "hero": {
+            "headline": "A sua terra, compreendida.",
+            "subtitle": "A plataforma biorregional que oferece aos proprietários de terras um perfil digital vivo da sua propriedade — combinando o que sabe com o que está publicamente disponível.",
+            "description": "As soluções para a degradação do solo já existem. O próximo passo é conhecimento documentado — do local ao global.",
+            "cta": "Junte-se ao Movimento",
+            "ctaSecondary": "Explorar o Diretório"
+        },
+        "pillars": {
+            "title": "Knowledge Commons. Três Pilares.",
+            "land": {
+                "title": "A Sua Terra",
+                "description": "Contribua com o que sabe. Nós complementamos com dados abertos de satélites, estudos de solo e registos meteorológicos."
+            },
+            "bioregion": {
+                "title": "A Sua Biorregião",
+                "description": "Compreenda o contexto ecológico da sua propriedade — os sistemas vivos, espécies e ritmos naturais que definem a sua região."
+            },
+            "seasons": {
+                "title": "As Suas Estações",
+                "description": "Saiba o que esperar e quando agir. Informações sazonais adaptadas à localização, clima e biorregião da sua terra."
+            }
+        },
+        "howItWorks": {
+            "title": "Como Funciona",
+            "step1": {
+                "title": "Conte-nos sobre a sua terra",
+                "description": "Percorra um formulário guiado que captura a história da sua propriedade — do solo às espécies."
+            },
+            "step2": {
+                "title": "Enriquecemos com dados abertos",
+                "description": "Importamos imagens de satélite, dados meteorológicos, estudos de solo e classificação biorregional — automaticamente."
+            },
+            "step3": {
+                "title": "Obtenha o seu Passaporte da Terra",
+                "description": "Uma página de perfil viva que combina o seu conhecimento com dados públicos num documento partilhável."
+            }
+        },
+        "impact": {
+            "title": "Base de Conhecimento em Crescimento",
+            "properties": "Propriedades Mapeadas",
+            "hectares": "Hectares Documentados",
+            "bioregions": "Biorregiões Cobertas"
+        },
+        "cta": {
+            "title": "A sua terra tem uma história.",
+            "subtitle": "Ajude-nos a construir a base de conhecimento biorregional mais abrangente do mundo — começando pela sua propriedade.",
+            "button": "Contribua com a Sua Terra"
+        }
+    },
+    "onboarding": {
+        "title": "Contribua com a Sua Terra",
+        "subtitle": "Conte-nos sobre a sua propriedade. Demora cerca de 10 minutos.",
+        "progress": "Passo {current} de {total}",
+        "steps": {
+            "propertyInfo": {
+                "title": "Informação da Propriedade",
+                "subtitle": "Comecemos pelo básico.",
+                "propertyName": "Nome da Propriedade",
+                "propertyNamePlaceholder": "ex. Quinta da Serra",
+                "ownerName": "O Seu Nome",
+                "ownerNamePlaceholder": "ex. Maria Santos",
+                "ownerEmail": "Email (opcional)",
+                "ownerEmailHelp": "Enviaremos um link privado para editar o seu passaporte.",
+                "ownerEmailPlaceholder": "ex. maria@exemplo.pt"
+            },
+            "location": {
+                "title": "Localização",
+                "subtitle": "Onde fica a sua propriedade?",
+                "searchPlaceholder": "Procurar um endereço...",
+                "clickMap": "Ou clique no mapa para colocar um marcador",
+                "coordinates": "Coordenadas",
+                "address": "Endereço"
+            },
+            "boundaries": {
+                "title": "Limites da Propriedade",
+                "subtitle": "Defina a área da sua propriedade.",
+                "drawOption": "Desenhar limites no mapa",
+                "areaOption": "Ou inserir área aproximada",
+                "areaPlaceholder": "ex. 25",
+                "skipDraw": "Desenho os limites mais tarde"
+            },
+            "landUse": {
+                "title": "Uso do Solo",
+                "subtitle": "O que existe atualmente na sua terra?",
+                "types": {
+                    "crops": "Culturas",
+                    "forest": "Floresta",
+                    "pasture": "Pastagem",
+                    "orchard": "Pomar",
+                    "mixed": "Uso Misto",
+                    "other": "Outro"
+                },
+                "descriptionLabel": "Conte-nos mais sobre como a terra é utilizada",
+                "descriptionPlaceholder": "ex. Maioritariamente floresta de sobreiro com olivais na encosta sul..."
+            },
+            "soil": {
+                "title": "Dados do Solo",
+                "subtitle": "O que sabe sobre o seu solo?",
+                "hasResults": "Tenho resultados de análises ao solo",
+                "uploadResults": "Carregue os seus resultados de análise",
+                "soilType": "Descreva o seu tipo de solo",
+                "soilTypePlaceholder": "ex. Argilo-limoso, rochoso nos campos superiores...",
+                "autoNote": "Não se preocupe — também importaremos dados públicos do solo para a sua área automaticamente."
+            },
+            "water": {
+                "title": "Fontes de Água",
+                "subtitle": "Que água está disponível na sua propriedade?",
+                "types": {
+                    "well": "Poço",
+                    "river": "Rio / Ribeiro",
+                    "spring": "Nascente",
+                    "rainwater": "Recolha de Água da Chuva",
+                    "irrigation": "Sistema de Irrigação",
+                    "other": "Outro"
+                },
+                "descriptionPlaceholder": "Descreva esta fonte de água..."
+            },
+            "floraFauna": {
+                "title": "Flora e Fauna",
+                "subtitle": "Que plantas e animais existem na sua terra?",
+                "floraLabel": "Espécies vegetais conhecidas",
+                "floraPlaceholder": "Escreva um nome de espécie e pressione Enter...",
+                "faunaLabel": "Espécies animais conhecidas",
+                "faunaPlaceholder": "Escreva um nome de espécie e pressione Enter...",
+                "descriptionLabel": "Notas adicionais",
+                "descriptionPlaceholder": "ex. Grande população de javalis, aves migratórias na primavera..."
+            },
+            "fire": {
+                "title": "Histórico de Incêndios",
+                "subtitle": "A sua propriedade foi afetada por incêndios?",
+                "hasHistory": "Propriedade tem histórico de incêndios",
+                "noHistory": "Sem histórico de incêndios",
+                "lastFireYear": "Ano do último incêndio",
+                "description": "Descreva o impacto do incêndio",
+                "descriptionPlaceholder": "ex. Encosta sul ardeu em 2017, regenerando bem...",
+                "preparedness": "Estado atual de preparação",
+                "prepared": "Preparado",
+                "partially": "Parcialmente Preparado",
+                "unprepared": "Não Preparado"
+            },
+            "challenges": {
+                "title": "Desafios Atuais",
+                "subtitle": "Que desafios enfrenta a sua terra?",
+                "types": {
+                    "erosion": "Erosão",
+                    "drought": "Seca",
+                    "pests": "Pragas",
+                    "fire_risk": "Risco de Incêndio",
+                    "flooding": "Inundações",
+                    "invasive_species": "Espécies Invasoras",
+                    "other": "Outro"
+                },
+                "descriptionLabel": "Descreva os seus desafios",
+                "descriptionPlaceholder": "ex. Erosão severa na encosta norte durante as chuvas de inverno..."
+            },
+            "goals": {
+                "title": "Objetivos para a Sua Terra",
+                "subtitle": "Qual é a sua visão?",
+                "types": {
+                    "conservation": "Conservação",
+                    "agriculture": "Agricultura",
+                    "sale": "Venda da Propriedade",
+                    "regeneration": "Regeneração",
+                    "tourism": "Eco-Turismo",
+                    "education": "Educação",
+                    "other": "Outro"
+                },
+                "descriptionLabel": "Descreva os seus objetivos",
+                "descriptionPlaceholder": "ex. Transição para agricultura regenerativa em 3 anos..."
+            },
+            "documents": {
+                "title": "Documentos e Relatórios",
+                "subtitle": "Carregue documentos existentes da propriedade.",
+                "dropzone": "Arraste ficheiros para aqui, ou clique para procurar",
+                "accepted": "Aceites: PDF, imagens",
+                "noDocuments": "Sem documentos para carregar"
+            },
+            "review": {
+                "title": "Reveja o Seu Passaporte",
+                "subtitle": "Está tudo correto? Pode sempre editar mais tarde.",
+                "section": {
+                    "property": "Propriedade",
+                    "location": "Localização",
+                    "boundaries": "Limites",
+                    "landUse": "Uso do Solo",
+                    "soil": "Solo",
+                    "water": "Fontes de Água",
+                    "floraFauna": "Flora e Fauna",
+                    "fire": "Histórico de Incêndios",
+                    "challenges": "Desafios",
+                    "goals": "Objetivos",
+                    "documents": "Documentos"
+                }
+            }
+        },
+        "success": {
+            "title": "O seu Passaporte da Terra está pronto!",
+            "subtitle": "Partilhe o perfil da sua propriedade com qualquer pessoa usando o link abaixo.",
+            "publicLink": "Link Público do Passaporte",
+            "editLink": "Link Privado de Edição",
+            "editLinkHelp": "Guarde este link — é a única forma de editar o seu passaporte.",
+            "viewPassport": "Ver o Seu Passaporte da Terra"
+        }
+    },
+    "passport": {
+        "title": "{name} — Passaporte da Terra",
+        "lastUpdated": "Última atualização {date}",
+        "sections": {
+            "yourLand": "A Sua Terra",
+            "landUse": "Uso do Solo",
+            "soil": "Solo",
+            "water": "Fontes de Água",
+            "floraFauna": "Flora e Fauna",
+            "bioregion": "A Sua Biorregião",
+            "seasons": "As Suas Estações",
+            "weather": "Meteorologia",
+            "fireRisk": "Risco de Incêndio",
+            "terrain": "Terreno e Elevação",
+            "satellite": "Vista de Satélite",
+            "challenges": "Desafios",
+            "goals": "Objetivos e Visão",
+            "documents": "Documentos e Relatórios"
+        },
+        "data": {
+            "ownerContributed": "Contribuição do proprietário",
+            "autoAggregated": "Dados agregados automaticamente",
+            "source": "Fonte: {source}",
+            "elevation": "{meters}m de elevação",
+            "noData": "Sem dados disponíveis"
+        },
+        "share": {
+            "title": "Partilhar Este Passaporte",
+            "copyLink": "Copiar Link"
+        }
+    },
+    "directory": {
+        "title": "Diretório Knowledge Commons",
+        "subtitle": "Explore propriedades documentadas e o seu contexto biorregional.",
+        "viewToggle": {
+            "list": "Vista de Lista",
+            "map": "Vista de Mapa"
+        },
+        "sort": {
+            "newest": "Mais Recentes",
+            "name": "Nome",
+            "area": "Área"
+        },
+        "empty": "Ainda sem propriedades. Seja o primeiro a contribuir!",
+        "viewPassport": "Ver Passaporte"
+    },
+    "footer": {
+        "tagline": "A construir uma base de conhecimento biorregional, uma propriedade de cada vez.",
+        "links": {
+            "contribute": "Contribua com a Sua Propriedade",
+            "directory": "Explorar Diretório",
+            "about": "Sobre"
+        },
+        "language": "Idioma",
+        "copyright": "© {year} Knowledge Commons. Parte do ecossistema llLibrary."
+    }
+}

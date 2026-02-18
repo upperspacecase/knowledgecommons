@@ -1,0 +1,292 @@
+{
+  "common": {
+    "siteTitle": "Knowledge Commons",
+    "tagline": "Your land, understood.",
+    "nav": {
+      "home": "Home",
+      "contribute": "Contribute",
+      "directory": "Directory"
+    },
+    "actions": {
+      "next": "Next",
+      "back": "Back",
+      "submit": "Submit",
+      "save": "Save",
+      "cancel": "Cancel",
+      "copy": "Copy Link",
+      "copied": "Copied!",
+      "skip": "Skip this step",
+      "edit": "Edit",
+      "download": "Download",
+      "viewPassport": "View Passport",
+      "createPassport": "Contribute Your Land",
+      "exploreDirectory": "Explore the Directory",
+      "joinMovement": "Join the Movement"
+    },
+    "units": {
+      "hectares": "hectares",
+      "acres": "acres"
+    }
+  },
+  "landing": {
+    "hero": {
+      "headline": "Your land, understood.",
+      "subtitle": "The bioregional platform that gives landowners a living digital profile of their property — combining what you know with what's publicly available.",
+      "description": "The solutions to land degradation already exist. The next step is documented knowledge — local to global.",
+      "cta": "Join the Movement",
+      "ctaSecondary": "Explore the Directory"
+    },
+    "pillars": {
+      "title": "Knowledge Commons. Three Pillars.",
+      "land": {
+        "title": "Your Land",
+        "description": "Contribute what you know. We'll build on it with open data from satellites, soil surveys, and weather records."
+      },
+      "bioregion": {
+        "title": "Your Bioregion",
+        "description": "Understand the ecological context of your property — the living systems, species, and natural rhythms that define your region."
+      },
+      "seasons": {
+        "title": "Your Seasons",
+        "description": "Know what to expect and when to act. Seasonal insights tailored to your land's location, climate, and bioregion."
+      }
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "step1": {
+        "title": "Tell us about your land",
+        "description": "Walk through a guided intake that captures your property's story — from soil to species."
+      },
+      "step2": {
+        "title": "We enrich it with open data",
+        "description": "We pull in satellite imagery, weather data, soil surveys, and bioregion classification — automatically."
+      },
+      "step3": {
+        "title": "Get your Land Passport",
+        "description": "A living profile page that combines your knowledge with public data into one shareable document."
+      }
+    },
+    "impact": {
+      "title": "Growing Knowledge Base",
+      "properties": "Properties Mapped",
+      "hectares": "Hectares Documented",
+      "bioregions": "Bioregions Covered"
+    },
+    "cta": {
+      "title": "Your land has a story.",
+      "subtitle": "Help us build the world's most comprehensive bioregional knowledge base — starting with your property.",
+      "button": "Contribute Your Land"
+    }
+  },
+  "onboarding": {
+    "title": "Contribute Your Land",
+    "subtitle": "Tell us about your property. This takes about 10 minutes.",
+    "progress": "Step {current} of {total}",
+    "steps": {
+      "propertyInfo": {
+        "title": "Property Information",
+        "subtitle": "Let's start with the basics.",
+        "propertyName": "Property Name",
+        "propertyNamePlaceholder": "e.g. Quinta da Serra",
+        "ownerName": "Your Name",
+        "ownerNamePlaceholder": "e.g. Maria Santos",
+        "ownerEmail": "Email (optional)",
+        "ownerEmailHelp": "We'll send you a private link to edit your passport later.",
+        "ownerEmailPlaceholder": "e.g. maria@example.com"
+      },
+      "location": {
+        "title": "Location",
+        "subtitle": "Where is your property?",
+        "searchPlaceholder": "Search for an address...",
+        "clickMap": "Or click on the map to place a pin",
+        "coordinates": "Coordinates",
+        "address": "Address"
+      },
+      "boundaries": {
+        "title": "Property Boundaries",
+        "subtitle": "Define your property area.",
+        "drawOption": "Draw boundaries on the map",
+        "areaOption": "Or enter approximate area",
+        "areaPlaceholder": "e.g. 25",
+        "skipDraw": "I'll draw boundaries later"
+      },
+      "landUse": {
+        "title": "Land Use",
+        "subtitle": "What's currently on your land?",
+        "types": {
+          "crops": "Crops",
+          "forest": "Forest",
+          "pasture": "Pasture",
+          "orchard": "Orchard",
+          "mixed": "Mixed Use",
+          "other": "Other"
+        },
+        "descriptionLabel": "Tell us more about how the land is used",
+        "descriptionPlaceholder": "e.g. Mostly cork oak forest with olive groves on the south slope..."
+      },
+      "soil": {
+        "title": "Soil Data",
+        "subtitle": "What do you know about your soil?",
+        "hasResults": "I have soil test results",
+        "uploadResults": "Upload your soil test results",
+        "soilType": "Describe your soil type",
+        "soilTypePlaceholder": "e.g. Clay-loam, rocky in the upper fields...",
+        "autoNote": "Don't worry — we'll also pull in public soil data for your area automatically."
+      },
+      "water": {
+        "title": "Water Sources",
+        "subtitle": "What water is available on your property?",
+        "types": {
+          "well": "Well",
+          "river": "River / Stream",
+          "spring": "Spring",
+          "rainwater": "Rainwater Collection",
+          "irrigation": "Irrigation System",
+          "other": "Other"
+        },
+        "descriptionPlaceholder": "Describe this water source..."
+      },
+      "floraFauna": {
+        "title": "Flora & Fauna",
+        "subtitle": "What plants and animals are on your land?",
+        "floraLabel": "Known plant species",
+        "floraPlaceholder": "Type a species name and press Enter...",
+        "faunaLabel": "Known animal species",
+        "faunaPlaceholder": "Type a species name and press Enter...",
+        "descriptionLabel": "Additional notes",
+        "descriptionPlaceholder": "e.g. Large population of wild boar, migratory birds in spring..."
+      },
+      "fire": {
+        "title": "Fire History",
+        "subtitle": "Has your property been affected by fire?",
+        "hasHistory": "Property has fire history",
+        "noHistory": "No fire history",
+        "lastFireYear": "Year of last fire",
+        "description": "Describe fire impact",
+        "descriptionPlaceholder": "e.g. Southern hillside burned in 2017, regenerating well...",
+        "preparedness": "Current preparedness status",
+        "prepared": "Prepared",
+        "partially": "Partially Prepared",
+        "unprepared": "Unprepared"
+      },
+      "challenges": {
+        "title": "Current Challenges",
+        "subtitle": "What challenges does your land face?",
+        "types": {
+          "erosion": "Erosion",
+          "drought": "Drought",
+          "pests": "Pests",
+          "fire_risk": "Fire Risk",
+          "flooding": "Flooding",
+          "invasive_species": "Invasive Species",
+          "other": "Other"
+        },
+        "descriptionLabel": "Describe your challenges",
+        "descriptionPlaceholder": "e.g. Severe erosion on the north slope during winter rains..."
+      },
+      "goals": {
+        "title": "Goals for Your Land",
+        "subtitle": "What's your vision?",
+        "types": {
+          "conservation": "Conservation",
+          "agriculture": "Agriculture",
+          "sale": "Property Sale",
+          "regeneration": "Regeneration",
+          "tourism": "Eco-Tourism",
+          "education": "Education",
+          "other": "Other"
+        },
+        "descriptionLabel": "Describe your goals",
+        "descriptionPlaceholder": "e.g. Transition to regenerative agriculture within 3 years..."
+      },
+      "documents": {
+        "title": "Documents & Reports",
+        "subtitle": "Upload any existing property documents.",
+        "dropzone": "Drag & drop files here, or click to browse",
+        "accepted": "Accepted: PDF, images",
+        "noDocuments": "No documents to upload"
+      },
+      "review": {
+        "title": "Review Your Passport",
+        "subtitle": "Everything look good? You can always edit later.",
+        "section": {
+          "property": "Property",
+          "location": "Location",
+          "boundaries": "Boundaries",
+          "landUse": "Land Use",
+          "soil": "Soil",
+          "water": "Water Sources",
+          "floraFauna": "Flora & Fauna",
+          "fire": "Fire History",
+          "challenges": "Challenges",
+          "goals": "Goals",
+          "documents": "Documents"
+        }
+      }
+    },
+    "success": {
+      "title": "Your Land Passport is ready!",
+      "subtitle": "Share your property's profile with anyone using the link below.",
+      "publicLink": "Public Passport Link",
+      "editLink": "Private Edit Link",
+      "editLinkHelp": "Save this link — it's the only way to edit your passport.",
+      "viewPassport": "View Your Land Passport"
+    }
+  },
+  "passport": {
+    "title": "{name} — Land Passport",
+    "lastUpdated": "Last updated {date}",
+    "sections": {
+      "yourLand": "Your Land",
+      "landUse": "Land Use",
+      "soil": "Soil",
+      "water": "Water Sources",
+      "floraFauna": "Flora & Fauna",
+      "bioregion": "Your Bioregion",
+      "seasons": "Your Seasons",
+      "weather": "Weather",
+      "fireRisk": "Fire Risk",
+      "terrain": "Terrain & Elevation",
+      "satellite": "Satellite View",
+      "challenges": "Challenges",
+      "goals": "Goals & Vision",
+      "documents": "Documents & Reports"
+    },
+    "data": {
+      "ownerContributed": "Owner contributed",
+      "autoAggregated": "Auto-aggregated",
+      "source": "Source: {source}",
+      "elevation": "{meters}m elevation",
+      "noData": "No data available"
+    },
+    "share": {
+      "title": "Share This Passport",
+      "copyLink": "Copy Link"
+    }
+  },
+  "directory": {
+    "title": "Knowledge Commons Directory",
+    "subtitle": "Explore documented properties and their bioregional context.",
+    "viewToggle": {
+      "list": "List View",
+      "map": "Map View"
+    },
+    "sort": {
+      "newest": "Newest",
+      "name": "Name",
+      "area": "Area"
+    },
+    "empty": "No properties yet. Be the first to contribute!",
+    "viewPassport": "View Passport"
+  },
+  "footer": {
+    "tagline": "Building a bioregional knowledge base, one property at a time.",
+    "links": {
+      "contribute": "Contribute Your Property",
+      "directory": "Browse Directory",
+      "about": "About"
+    },
+    "language": "Language",
+    "copyright": "© {year} Knowledge Commons. Part of the llLibrary ecosystem."
+  }
+}
