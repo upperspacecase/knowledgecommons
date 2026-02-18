@@ -31,19 +31,21 @@ export default function Success({ id, editToken }) {
 
     return (
         <div className="max-w-xl mx-auto px-4 sm:px-6 py-16 text-center">
-            {/* Success animation */}
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-forest-600 to-forest-400 flex items-center justify-center mx-auto mb-8">
-                <Check size={40} className="text-white" />
+            {/* Success icon */}
+            <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center mx-auto mb-8">
+                <Check size={40} className="text-black" />
             </div>
 
-            <h1 className="font-serif text-3xl font-bold mb-3">{t("title")}</h1>
-            <p className="text-white/50 mb-10">{t("subtitle")}</p>
+            <h1 className="font-serif text-3xl font-bold mb-3">
+                {t("title")}
+            </h1>
+            <p className="text-white/40 mb-10">{t("subtitle")}</p>
 
             {/* Public link */}
-            <div className="glass-card p-5 mb-4 text-left">
+            <div className="bg-white/5 border border-white/8 rounded-xl p-5 mb-4 text-left">
                 <div className="flex items-center gap-2 mb-2">
-                    <ExternalLink size={14} className="text-forest-400" />
-                    <span className="text-sm font-medium text-forest-400">
+                    <ExternalLink size={14} className="text-white/40" />
+                    <span className="text-sm font-medium text-white/60">
                         {t("publicLink")}
                     </span>
                 </div>
@@ -52,11 +54,13 @@ export default function Success({ id, editToken }) {
                         type="text"
                         value={publicUrl}
                         readOnly
-                        className="input input-bordered input-sm flex-1 bg-white/5 border-white/10 text-white/70 font-mono text-xs"
+                        className="flex-1 px-3 py-2 rounded-lg bg-white/5 border border-white/8 text-white/50 font-mono text-xs"
                     />
                     <button
-                        onClick={() => copyToClipboard(publicUrl, setCopiedPublic)}
-                        className="btn btn-sm bg-forest-700 border-0 text-white hover:bg-forest-600 gap-1"
+                        onClick={() =>
+                            copyToClipboard(publicUrl, setCopiedPublic)
+                        }
+                        className="px-3 py-2 rounded-lg bg-white text-black text-xs font-medium hover:bg-white/90 transition-colors"
                     >
                         {copiedPublic ? (
                             <Check size={14} />
@@ -68,24 +72,28 @@ export default function Success({ id, editToken }) {
             </div>
 
             {/* Edit link */}
-            <div className="glass-card p-5 mb-8 text-left border-ember-500/20">
+            <div className="bg-white/5 border border-white/8 rounded-xl p-5 mb-8 text-left">
                 <div className="flex items-center gap-2 mb-2">
-                    <Lock size={14} className="text-ember-500" />
-                    <span className="text-sm font-medium text-ember-500">
+                    <Lock size={14} className="text-white/40" />
+                    <span className="text-sm font-medium text-white/60">
                         {t("editLink")}
                     </span>
                 </div>
-                <p className="text-xs text-white/30 mb-2">{t("editLinkHelp")}</p>
+                <p className="text-xs text-white/25 mb-2">
+                    {t("editLinkHelp")}
+                </p>
                 <div className="flex gap-2">
                     <input
                         type="text"
                         value={editUrl}
                         readOnly
-                        className="input input-bordered input-sm flex-1 bg-white/5 border-white/10 text-white/70 font-mono text-xs"
+                        className="flex-1 px-3 py-2 rounded-lg bg-white/5 border border-white/8 text-white/50 font-mono text-xs"
                     />
                     <button
-                        onClick={() => copyToClipboard(editUrl, setCopiedEdit)}
-                        className="btn btn-sm bg-ember-500 border-0 text-white hover:bg-ember-600 gap-1"
+                        onClick={() =>
+                            copyToClipboard(editUrl, setCopiedEdit)
+                        }
+                        className="px-3 py-2 rounded-lg bg-white text-black text-xs font-medium hover:bg-white/90 transition-colors"
                     >
                         {copiedEdit ? (
                             <Check size={14} />
@@ -98,7 +106,7 @@ export default function Success({ id, editToken }) {
 
             <Link
                 href={`/passport/${id}`}
-                className="btn bg-gradient-to-r from-forest-700 to-forest-600 border-0 text-white hover:from-forest-600 hover:to-forest-500 rounded-full px-8"
+                className="inline-flex items-center gap-2 px-8 py-3 rounded-full text-sm font-bold bg-white text-black hover:bg-white/90 transition-all"
             >
                 {t("viewPassport")}
             </Link>

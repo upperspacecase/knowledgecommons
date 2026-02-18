@@ -14,7 +14,7 @@ export default async function ContributePage({ params }) {
     setRequestLocale(locale);
 
     return (
-        <div className="pt-20 min-h-screen">
+        <div className="pt-20 min-h-screen" style={{ background: "#0A0A0A" }}>
             <OnboardingWizard />
         </div>
     );
