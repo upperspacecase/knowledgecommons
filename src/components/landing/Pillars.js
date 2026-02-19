@@ -31,14 +31,22 @@ export default function Pillars() {
     const pillars = ["land", "bioregion", "seasons"];
 
     return (
-        <section ref={sectionRef} className="section-padding bg-[var(--background)]">
+        <section
+            ref={sectionRef}
+            className="section-padding bg-[var(--background)]"
+        >
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-                {/* Section header */}
-                <h2 className="headline-lg text-center mb-16 max-w-3xl mx-auto">
-                    {t("title")}
-                </h2>
+                {/* Eyebrow + Headline */}
+                <div className="max-w-2xl mb-16">
+                    <p className="eyebrow text-black/40 mb-4">
+                        Our Framework
+                    </p>
+                    <h2 className="headline-lg text-[var(--foreground)]">
+                        {t("title")}
+                    </h2>
+                </div>
 
-                {/* Pillar cards — photography-driven like One Earth */}
+                {/* Pillar cards — photography-driven */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {pillars.map((key, i) => (
                         <div
@@ -56,7 +64,10 @@ export default function Pillars() {
                             />
                             <div className="card-overlay" />
                             <div className="card-content">
-                                <h3 className="font-serif text-2xl font-bold text-white mb-3">
+                                <p className="eyebrow text-white/50 mb-2">
+                                    Pillar {i + 1}
+                                </p>
+                                <h3 className="font-serif text-2xl text-white mb-3">
                                     {t(`${key}.title`)}
                                 </h3>
                                 <p className="text-white/70 text-sm leading-relaxed">

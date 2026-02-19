@@ -2,51 +2,28 @@
 @import "leaflet/dist/leaflet.css";
 
 @plugin "daisyui" {
-  themes: forest --default, emerald --prefersdark;
+  themes: emerald --default;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
+  --font-serif: var(--font-dm-serif);
 
-  /* One Earth–inspired palette */
-  --color-forest-900: #1B4332;
-  --color-forest-800: #2D6A4F;
-  --color-forest-700: #40916C;
-  --color-forest-600: #52B788;
-  --color-forest-500: #74C69D;
-  --color-forest-400: #95D5B2;
-  --color-forest-300: #B7E4C7;
-  --color-forest-200: #D8F3DC;
-  --color-forest-100: #F0FFF4;
-
-  --color-earth-700: #8B6914;
-  --color-earth-600: #A67C28;
-  --color-earth-500: #D4A373;
-  --color-earth-400: #E9C46A;
-  --color-earth-300: #FEFAE0;
-
-  --color-ocean-700: #0077B6;
-  --color-ocean-600: #0096C7;
-  --color-ocean-500: #48CAE4;
-  --color-ocean-400: #90E0EF;
-  --color-ocean-300: #CAF0F8;
-
-  --color-ember-600: #E76F51;
-  --color-ember-500: #F4845F;
-  --color-ember-400: #F4A261;
-
-  /* One Earth accent: warm cream/peach */
-  --color-cream: #F5E6D3;
-  --color-peach: #E8926F;
+  /* One Earth palette — light editorial */
+  --color-cream: #F5F0E8;
   --color-warm-white: #FAF7F2;
+  --color-sand: #EDE6D8;
+  --color-green-accent: #6DB86B;
+  --color-green-light: #A8D5A2;
+  --color-coral: #E8926F;
+  --color-peach: #F0A882;
 }
 
 :root {
-  --background: #1A2E1F;
-  --foreground: #FAF7F2;
+  --background: #F5F0E8;
+  --foreground: #1A1A1A;
 }
 
 /* Smooth scroll */
@@ -60,41 +37,48 @@ body {
 }
 
 /* ============================
-   Typography — One Earth style
+   Typography — Editorial serif
    ============================ */
 .headline-xl {
   font-family: var(--font-serif);
   font-size: clamp(3rem, 6vw, 5.5rem);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.05;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .headline-lg {
   font-family: var(--font-serif);
   font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.1;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
 }
 
 .headline-md {
   font-family: var(--font-serif);
   font-size: clamp(1.5rem, 3vw, 2.25rem);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.15;
 }
 
 .body-lg {
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: 1.125rem;
+  line-height: 1.7;
   font-weight: 400;
 }
 
 .body-md {
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.7;
   font-weight: 400;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 /* ============================
@@ -108,37 +92,83 @@ body {
 }
 
 /* ============================
-   Custom scrollbar
+   Section spacing
    ============================ */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.25);
+.section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 /* ============================
-   Glass card (for inner pages)
+   CTA button — dark solid
    ============================ */
-.glass-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 1rem;
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: #1A1A1A;
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-cta:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
+/* Outlined variant — dark */
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: #1A1A1A;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 9999px;
+  border: 1.5px solid #1A1A1A;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-dark:hover {
+  background: #1A1A1A;
+  color: #FFFFFF;
+}
+
+/* Outlined variant — light (for dark sections like hero) */
+.btn-outline-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-outline-light:hover {
+  border-color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* ============================
-   Content card — One Earth style
+   Content card — photo cards
    ============================ */
 .content-card {
   position: relative;
@@ -162,7 +192,7 @@ body {
 .content-card .card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.1) 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.05) 100%);
 }
 
 .content-card .card-content {
@@ -177,69 +207,19 @@ body {
 }
 
 /* ============================
-   Gradient text
+   Editorial card — bordered
    ============================ */
-.gradient-text {
-  background: linear-gradient(135deg, var(--color-forest-400), var(--color-ocean-500));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.editorial-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  padding: 2.5rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* ============================
-   Section spacing
-   ============================ */
-.section-padding {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
-
-/* ============================
-   CTA button — One Earth peach/coral
-   ============================ */
-.btn-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.875rem 2rem;
-  background: var(--color-peach);
-  color: #1A2E1F;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border-radius: 9999px;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.btn-cta:hover {
-  background: #D47A5A;
-  transform: translateY(-1px);
-}
-
-/* Outlined variant */
-.btn-outline-light {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.875rem 2rem;
-  background: transparent;
-  color: var(--foreground);
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border-radius: 9999px;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.btn-outline-light:hover {
-  border-color: rgba(255, 255, 255, 0.8);
-  background: rgba(255, 255, 255, 0.08);
+.editorial-card:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
 }
 
 /* ============================
@@ -257,25 +237,46 @@ body {
 }
 
 /* ============================
-   Tag badge
+   Impact stat — editorial divider
+   ============================ */
+.impact-stat {
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.impact-stat:last-child {
+  border-right: none;
+}
+
+/* ============================
+   Tag badge — light theme
    ============================ */
 .tag-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
   padding: 0.25rem 0.75rem;
-  background: rgba(116, 198, 157, 0.15);
-  border: 1px solid rgba(116, 198, 157, 0.3);
+  background: rgba(109, 184, 107, 0.12);
+  border: 1px solid rgba(109, 184, 107, 0.25);
   border-radius: 9999px;
   font-size: 0.875rem;
-  color: var(--color-forest-400);
+  color: #3D8B3B;
 }
 
 /* ============================
-   Dropzone
+   Glass card (for passport/inner pages)
+   ============================ */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 1rem;
+}
+
+/* ============================
+   Dropzone — light theme
    ============================ */
 .dropzone {
-  border: 2px dashed rgba(255, 255, 255, 0.15);
+  border: 2px dashed rgba(0, 0, 0, 0.15);
   border-radius: 1rem;
   padding: 2rem;
   text-align: center;
@@ -285,8 +286,8 @@ body {
 
 .dropzone:hover,
 .dropzone.active {
-  border-color: var(--color-forest-500);
-  background: rgba(116, 198, 157, 0.05);
+  border-color: var(--color-green-accent);
+  background: rgba(109, 184, 107, 0.05);
 }
 
 /* ============================
@@ -303,33 +304,11 @@ body {
 }
 
 .source-badge.owner {
-  background: rgba(116, 198, 157, 0.15);
-  color: var(--color-forest-400);
+  background: rgba(109, 184, 107, 0.12);
+  color: #3D8B3B;
 }
 
 .source-badge.auto {
-  background: rgba(72, 202, 228, 0.15);
-  color: var(--color-ocean-500);
-}
-
-/* ============================
-   Step card hover
-   ============================ */
-.step-card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.step-card:hover {
-  transform: translateY(-2px);
-}
-
-/* ============================
-   Impact counter — editorial style
-   ============================ */
-.impact-stat {
-  border-right: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.impact-stat:last-child {
-  border-right: none;
+  background: rgba(109, 184, 107, 0.08);
+  color: #5A9A58;
 }

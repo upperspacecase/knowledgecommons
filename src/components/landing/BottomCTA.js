@@ -8,31 +8,39 @@ export default function BottomCTA() {
     const t = useTranslations("landing.cta");
 
     return (
-        <section className="relative py-24 sm:py-32 overflow-hidden">
-            {/* Background — dark forest with texture */}
-            <div className="absolute inset-0 bg-forest-900" />
-            <div className="absolute inset-0 opacity-20" style={{
-                backgroundImage: `url(/images/pillar-land.png)`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                filter: 'blur(3px)',
-            }} />
-            <div className="absolute inset-0 bg-gradient-to-b from-forest-900/90 to-forest-900/95" />
+        <section className="py-24 sm:py-32">
+            <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-2xl overflow-hidden">
+                    {/* Green accent block */}
+                    <div className="bg-[#6DB86B] p-10 sm:p-14 flex flex-col justify-center">
+                        <p className="eyebrow text-black/40 mb-4">
+                            Get Started
+                        </p>
+                        <h2 className="font-serif text-3xl sm:text-4xl text-[#1A1A1A] mb-4 leading-tight">
+                            {t("title")}
+                        </h2>
+                        <p className="body-md text-black/60 max-w-md">
+                            {t("subtitle")}
+                        </p>
+                    </div>
 
-            <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
-                <h2 className="headline-lg text-cream mb-6">
-                    {t("title")}
-                </h2>
-                <p className="body-lg text-white/60 max-w-2xl mx-auto mb-10">
-                    {t("subtitle")}
-                </p>
-                <Link href="/contribute" className="btn-cta group text-base">
-                    {t("button")}
-                    <ArrowRight
-                        size={18}
-                        className="group-hover:translate-x-1 transition-transform"
-                    />
-                </Link>
+                    {/* CTA side */}
+                    <div className="bg-[var(--background)] p-10 sm:p-14 flex flex-col justify-center items-start border border-l-0 border-black/8 rounded-r-2xl">
+                        <p className="body-md text-black/50 mb-6">
+                            Build your property&apos;s living profile
+                        </p>
+                        <Link
+                            href="/contribute"
+                            className="btn-cta group"
+                        >
+                            {t("button")}
+                            <ArrowRight
+                                size={16}
+                                className="group-hover:translate-x-1 transition-transform"
+                            />
+                        </Link>
+                    </div>
+                </div>
             </div>
         </section>
     );

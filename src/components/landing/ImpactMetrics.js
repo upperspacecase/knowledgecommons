@@ -60,30 +60,34 @@ export default function ImpactMetrics() {
     return (
         <section className="section-padding">
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-                <h2 className="headline-lg text-center mb-16">
-                    {t("title")}
-                </h2>
+                <div className="max-w-2xl mb-16">
+                    <p className="eyebrow text-black/40 mb-4">
+                        Impact
+                    </p>
+                    <h2 className="headline-lg text-[var(--foreground)]">
+                        {t("title")}
+                    </h2>
+                </div>
 
-                {/* Stats row — editorial style with dividers */}
+                {/* Stats row — editorial dividers */}
                 <div className="flex flex-col md:flex-row items-stretch justify-center">
                     {metrics.map(({ value, label }, i) => (
                         <div
                             key={i}
                             className="flex-1 text-center py-8 md:py-0 impact-stat"
                         >
-                            <div className="text-5xl sm:text-6xl font-serif font-bold text-cream mb-3">
+                            <div className="text-5xl sm:text-6xl font-serif text-[var(--foreground)] mb-3">
                                 <AnimatedCounter end={value} />
                             </div>
-                            <p className="text-white/40 text-sm uppercase tracking-widest font-medium">
+                            <p className="text-black/40 text-sm uppercase tracking-widest font-medium">
                                 {label}
                             </p>
                         </div>
                     ))}
                 </div>
 
-                <p className="text-center text-white/30 text-sm mt-12">
-                    Be the first to contribute and help build this knowledge
-                    base.
+                <p className="text-center text-black/30 text-sm mt-12">
+                    Be the first to contribute and help build this knowledge base.
                 </p>
             </div>
         </section>

@@ -1,4 +1,4 @@
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, DM_Serif_Display } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
@@ -10,9 +10,10 @@ const inter = Inter({
     subsets: ["latin"],
 });
 
-const playfair = Playfair_Display({
-    variable: "--font-playfair",
+const dmSerif = DM_Serif_Display({
+    variable: "--font-dm-serif",
     subsets: ["latin"],
+    weight: "400",
 });
 
 export function generateStaticParams() {
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }) {
     const { locale } = await params;
     const messages = await getMessages({ locale });
     return {
-        title: messages.common?.siteTitle || "Land Passport",
+        title: messages.common?.siteTitle || "Knowledge Commons",
         description:
             messages.landing?.hero?.subtitle ||
             "Your land, understood.",
@@ -36,9 +37,9 @@ export default async function LocaleLayout({ children, params }) {
     const messages = await getMessages();
 
     return (
-        <html lang={locale} data-theme="forest">
+        <html lang={locale}>
             <body
-                className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-[var(--background)] text-[var(--foreground)]`}
+                className={`${inter.variable} ${dmSerif.variable} font-sans antialiased bg-[var(--background)] text-[var(--foreground)]`}
             >
                 <NextIntlClientProvider messages={messages}>
                     <Navbar />

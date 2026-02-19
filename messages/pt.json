@@ -19,7 +19,7 @@
             "edit": "Editar",
             "download": "Descarregar",
             "viewPassport": "Ver Passaporte",
-            "createPassport": "Contribua com a Sua Terra",
+            "createPassport": "Criar Passaporte da Terra",
             "exploreDirectory": "Explorar o Diretório",
             "joinMovement": "Junte-se ao Movimento"
         },
@@ -33,7 +33,7 @@
             "headline": "A sua terra, compreendida.",
             "subtitle": "A plataforma biorregional que oferece aos proprietários de terras um perfil digital vivo da sua propriedade — combinando o que sabe com o que está publicamente disponível.",
             "description": "As soluções para a degradação do solo já existem. O próximo passo é conhecimento documentado — do local ao global.",
-            "cta": "Junte-se ao Movimento",
+            "cta": "Criar Passaporte da Terra",
             "ctaSecondary": "Explorar o Diretório"
         },
         "pillars": {
@@ -75,7 +75,7 @@
         "cta": {
             "title": "A sua terra tem uma história.",
             "subtitle": "Ajude-nos a construir a base de conhecimento biorregional mais abrangente do mundo — começando pela sua propriedade.",
-            "button": "Contribua com a Sua Terra"
+            "button": "Criar Passaporte da Terra"
         }
     },
     "onboarding": {

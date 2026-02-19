@@ -19,7 +19,7 @@
       "edit": "Edit",
       "download": "Download",
       "viewPassport": "View Passport",
-      "createPassport": "Contribute Your Land",
+      "createPassport": "Create Land Passport",
       "exploreDirectory": "Explore the Directory",
       "joinMovement": "Join the Movement"
     },
@@ -33,7 +33,7 @@
       "headline": "Your land, understood.",
       "subtitle": "The bioregional platform that gives landowners a living digital profile of their property — combining what you know with what's publicly available.",
       "description": "The solutions to land degradation already exist. The next step is documented knowledge — local to global.",
-      "cta": "Join the Movement",
+      "cta": "Create Land Passport",
       "ctaSecondary": "Explore the Directory"
     },
     "pillars": {
@@ -75,7 +75,7 @@
     "cta": {
       "title": "Your land has a story.",
       "subtitle": "Help us build the world's most comprehensive bioregional knowledge base — starting with your property.",
-      "button": "Contribute Your Land"
+      "button": "Create Land Passport"
     }
   },
   "onboarding": {

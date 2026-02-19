@@ -28,48 +28,47 @@ export default function HowItWorks() {
     const steps = ["step1", "step2", "step3"];
 
     return (
-        <section
-            ref={sectionRef}
-            className="section-padding relative"
-            style={{ background: "rgba(255,255,255,0.03)" }}
-        >
+        <section ref={sectionRef} className="section-padding">
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-                <h2 className="headline-lg text-center mb-20">
-                    {t("title")}
-                </h2>
+                {/* Eyebrow + Headline */}
+                <div className="max-w-2xl mb-16">
+                    <p className="eyebrow text-black/40 mb-4">
+                        How It Works
+                    </p>
+                    <h2 className="headline-lg text-[var(--foreground)]">
+                        {t("title")}
+                    </h2>
+                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 relative">
-                    {/* Connecting line */}
-                    <div className="hidden md:block absolute top-10 left-[20%] right-[20%] h-px bg-white/10" />
-
+                {/* Editorial bordered cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {steps.map((key, i) => {
                         const Icon = stepIcons[i];
                         return (
                             <div
                                 key={key}
-                                className={`relative text-center transition-all duration-700 ${visible
+                                className={`editorial-card relative transition-all duration-700 ${visible
                                         ? "opacity-100 translate-y-0"
                                         : "opacity-0 translate-y-8"
                                     }`}
-                                style={{ transitionDelay: `${i * 200}ms` }}
+                                style={{ transitionDelay: `${i * 150}ms` }}
                             >
-                                {/* Step number circle */}
-                                <div className="relative z-10 mx-auto mb-8">
-                                    <div className="w-20 h-20 rounded-full bg-[var(--background)] border-2 border-white/15 flex items-center justify-center mx-auto">
-                                        <Icon
-                                            size={28}
-                                            className="text-cream"
-                                        />
-                                    </div>
-                                    <div className="absolute -top-1 -right-1 w-7 h-7 rounded-full bg-peach flex items-center justify-center text-xs font-bold text-[var(--background)]">
-                                        {i + 1}
-                                    </div>
+                                {/* Step number + icon */}
+                                <div className="flex items-start justify-between mb-6">
+                                    <span className="font-serif text-4xl text-black/10">
+                                        {String(i + 1).padStart(2, "0")}
+                                    </span>
+                                    <Icon
+                                        size={28}
+                                        strokeWidth={1.5}
+                                        className="text-[var(--color-green-accent)]"
+                                    />
                                 </div>
 
-                                <h3 className="font-serif text-xl font-semibold mb-3">
+                                <h3 className="font-serif text-xl text-[var(--foreground)] mb-3">
                                     {t(`${key}.title`)}
                                 </h3>
-                                <p className="text-white/50 body-md max-w-xs mx-auto">
+                                <p className="body-md text-black/50">
                                     {t(`${key}.description`)}
                                 </p>
                             </div>

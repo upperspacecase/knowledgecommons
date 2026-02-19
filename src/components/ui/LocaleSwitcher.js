@@ -15,22 +15,22 @@ export default function LocaleSwitcher() {
 
     return (
         <div className="flex items-center gap-1.5">
-            <Globe size={14} className="text-white/40" />
+            <Globe size={14} className="text-current opacity-40" />
             <button
                 onClick={() => switchLocale("en")}
                 className={`text-xs font-medium px-1.5 py-0.5 rounded transition-colors ${locale === "en"
-                        ? "text-forest-400 bg-forest-400/10"
-                        : "text-white/40 hover:text-white/70"
+                        ? "text-[var(--color-green-accent)] bg-[var(--color-green-accent)]/10"
+                        : "text-current opacity-40 hover:opacity-70"
                     }`}
             >
                 EN
             </button>
-            <span className="text-white/20">|</span>
+            <span className="text-current opacity-20">|</span>
             <button
                 onClick={() => switchLocale("pt")}
                 className={`text-xs font-medium px-1.5 py-0.5 rounded transition-colors ${locale === "pt"
-                        ? "text-forest-400 bg-forest-400/10"
-                        : "text-white/40 hover:text-white/70"
+                        ? "text-[var(--color-green-accent)] bg-[var(--color-green-accent)]/10"
+                        : "text-current opacity-40 hover:opacity-70"
                     }`}
             >
                 PT
