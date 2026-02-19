@@ -36,7 +36,7 @@ export default function Success({ id, editToken }) {
                 <Check size={40} className="text-black" />
             </div>
 
-            <h1 className="font-serif text-3xl font-bold mb-3">
+            <h1 className="font-serif text-3xl font-bold mb-3 text-white">
                 {t("title")}
             </h1>
             <p className="text-white/40 mb-10">{t("subtitle")}</p>

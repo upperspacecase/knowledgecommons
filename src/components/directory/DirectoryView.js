@@ -17,7 +17,7 @@ import {
 const DirectoryMap = dynamic(() => import("./DirectoryMap"), {
     ssr: false,
     loading: () => (
-        <div className="w-full h-96 rounded-xl bg-white/5 animate-pulse" />
+        <div className="w-full h-96 rounded-xl bg-black/5 animate-pulse" />
     ),
 });
 
@@ -51,34 +51,34 @@ export default function DirectoryView({ properties }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             {/* Header */}
             <div className="text-center mb-12">
-                <h1 className="font-serif text-3xl sm:text-4xl font-bold mb-3">
+                <h1 className="font-serif text-3xl sm:text-4xl font-bold mb-3 text-[var(--foreground)]">
                     {t("title")}
                 </h1>
-                <p className="text-white/50 max-w-lg mx-auto">{t("subtitle")}</p>
+                <p className="text-black/50 max-w-lg mx-auto">{t("subtitle")}</p>
             </div>
 
             {/* Impact stats */}
             <div className="grid grid-cols-3 gap-4 mb-10">
                 <div className="glass-card p-4 text-center">
-                    <MapPin size={20} className="text-forest-400 mx-auto mb-2" />
-                    <p className="text-2xl font-bold text-forest-400">
+                    <MapPin size={20} className="text-[var(--color-green-accent)] mx-auto mb-2" />
+                    <p className="text-2xl font-bold text-[var(--color-green-accent)]">
                         {totalProperties}
                     </p>
-                    <p className="text-xs text-white/40">Properties</p>
+                    <p className="text-xs text-black/40">Properties</p>
                 </div>
                 <div className="glass-card p-4 text-center">
-                    <Ruler size={20} className="text-ocean-500 mx-auto mb-2" />
-                    <p className="text-2xl font-bold text-ocean-500">
+                    <Ruler size={20} className="text-[var(--color-terracotta)] mx-auto mb-2" />
+                    <p className="text-2xl font-bold text-[var(--color-terracotta)]">
                         {totalHectares.toLocaleString()}
                     </p>
-                    <p className="text-xs text-white/40">Hectares</p>
+                    <p className="text-xs text-black/40">Hectares</p>
                 </div>
                 <div className="glass-card p-4 text-center">
-                    <Globe2 size={20} className="text-earth-500 mx-auto mb-2" />
-                    <p className="text-2xl font-bold text-earth-500">
+                    <Globe2 size={20} className="text-[var(--color-coral)] mx-auto mb-2" />
+                    <p className="text-2xl font-bold text-[var(--color-coral)]">
                         {uniqueBioregions || 0}
                     </p>
-                    <p className="text-xs text-white/40">Regions</p>
+                    <p className="text-xs text-black/40">Regions</p>
                 </div>
             </div>
 
@@ -88,8 +88,8 @@ export default function DirectoryView({ properties }) {
                     <button
                         onClick={() => setView("list")}
                         className={`btn btn-sm gap-1 ${view === "list"
-                                ? "bg-forest-700 border-0 text-white"
-                                : "btn-ghost text-white/40"
+                            ? "bg-[var(--color-green-accent)] border-0 text-white"
+                            : "btn-ghost text-black/40"
                             }`}
                     >
                         <List size={14} />
@@ -98,8 +98,8 @@ export default function DirectoryView({ properties }) {
                     <button
                         onClick={() => setView("map")}
                         className={`btn btn-sm gap-1 ${view === "map"
-                                ? "bg-forest-700 border-0 text-white"
-                                : "btn-ghost text-white/40"
+                            ? "bg-[var(--color-green-accent)] border-0 text-white"
+                            : "btn-ghost text-black/40"
                             }`}
                     >
                         <Map size={14} />
@@ -110,7 +110,7 @@ export default function DirectoryView({ properties }) {
                 <select
                     value={sort}
                     onChange={(e) => setSort(e.target.value)}
-                    className="select select-sm bg-white/5 border-white/10 text-white/60 text-xs"
+                    className="select select-sm bg-black/5 border-black/10 text-black/60 text-xs"
                 >
                     <option value="newest">{t("sort.newest")}</option>
                     <option value="name">{t("sort.name")}</option>
@@ -121,17 +121,17 @@ export default function DirectoryView({ properties }) {
             {/* Content */}
             {properties.length === 0 ? (
                 <div className="text-center py-20">
-                    <Trees size={48} className="text-white/10 mx-auto mb-4" />
-                    <p className="text-white/40">{t("empty")}</p>
+                    <Trees size={48} className="text-black/10 mx-auto mb-4" />
+                    <p className="text-black/40">{t("empty")}</p>
                     <Link
                         href="/contribute"
-                        className="btn bg-gradient-to-r from-forest-700 to-forest-600 border-0 text-white rounded-full px-6 mt-6"
+                        className="btn-cta rounded-full px-6 mt-6"
                     >
                         Create First Passport
                     </Link>
                 </div>
             ) : view === "map" ? (
-                <div className="h-[500px] rounded-2xl overflow-hidden border border-white/10">
+                <div className="h-[500px] rounded-2xl overflow-hidden border border-black/10">
                     <DirectoryMap properties={sorted} />
                 </div>
             ) : (
@@ -140,19 +140,19 @@ export default function DirectoryView({ properties }) {
                         <Link
                             key={property._id}
                             href={`/passport/${property._id}`}
-                            className="glass-card p-5 hover:bg-white/8 transition-all group"
+                            className="glass-card p-5 hover:bg-black/3 transition-all group"
                         >
                             <div className="flex items-start justify-between mb-3">
-                                <h3 className="font-semibold text-sm group-hover:text-forest-400 transition-colors">
+                                <h3 className="font-semibold text-sm text-[var(--foreground)] group-hover:text-[var(--color-green-accent)] transition-colors">
                                     {property.propertyName}
                                 </h3>
                                 <ArrowRight
                                     size={14}
-                                    className="text-white/20 group-hover:text-forest-400 transition-colors mt-0.5"
+                                    className="text-black/20 group-hover:text-[var(--color-green-accent)] transition-colors mt-0.5"
                                 />
                             </div>
 
-                            <div className="space-y-2 text-xs text-white/40">
+                            <div className="space-y-2 text-xs text-black/40">
                                 <div className="flex items-center gap-1.5">
                                     <MapPin size={12} />
                                     <span className="truncate">
@@ -174,7 +174,7 @@ export default function DirectoryView({ properties }) {
                                         {property.landUse.slice(0, 3).map((use) => (
                                             <span
                                                 key={use}
-                                                className="px-2 py-0.5 rounded-full bg-forest-400/10 text-forest-400 text-xs capitalize"
+                                                className="px-2 py-0.5 rounded-full bg-[var(--color-green-accent)]/10 text-[var(--color-green-accent)] text-xs capitalize"
                                             >
                                                 {use}
                                             </span>

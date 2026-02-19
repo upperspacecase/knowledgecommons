@@ -26,9 +26,9 @@ export default async function EditPage({ params, searchParams }) {
     }
 
     return (
-        <div className="pt-20 min-h-screen">
+        <div className="pt-20 min-h-screen" style={{ background: "#0A0A0A" }}>
             <div className="max-w-3xl mx-auto px-4 py-8 text-center mb-4">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-earth-500/15 border border-earth-500/30 text-earth-400 text-sm font-medium">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-terracotta)]/15 border border-[var(--color-terracotta)]/30 text-[var(--color-coral)] text-sm font-medium">
                     Editing: {property.propertyName}
                 </div>
             </div>

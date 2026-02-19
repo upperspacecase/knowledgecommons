@@ -26,16 +26,16 @@ import {
 const PassportMap = dynamic(() => import("./PassportMap"), {
     ssr: false,
     loading: () => (
-        <div className="w-full h-64 rounded-xl bg-white/5 animate-pulse" />
+        <div className="w-full h-64 rounded-xl bg-black/5 animate-pulse" />
     ),
 });
 
 function DataCard({ icon: Icon, title, children, source, color = "forest" }) {
     const colorMap = {
-        forest: { bg: "bg-forest-400/10", text: "text-forest-400", border: "border-forest-500/20" },
-        ocean: { bg: "bg-ocean-500/10", text: "text-ocean-500", border: "border-ocean-500/20" },
-        earth: { bg: "bg-earth-500/10", text: "text-earth-500", border: "border-earth-500/20" },
-        ember: { bg: "bg-ember-500/10", text: "text-ember-500", border: "border-ember-500/20" },
+        forest: { bg: "bg-[#6DB86B]/10", text: "text-[#6DB86B]", border: "border-[#6DB86B]/20" },
+        ocean: { bg: "bg-[#4A90A4]/10", text: "text-[#4A90A4]", border: "border-[#4A90A4]/20" },
+        earth: { bg: "bg-[#C25B3A]/10", text: "text-[#C25B3A]", border: "border-[#C25B3A]/20" },
+        ember: { bg: "bg-[#E8926F]/10", text: "text-[#E8926F]", border: "border-[#E8926F]/20" },
     };
     const c = colorMap[color];
 
@@ -46,7 +46,7 @@ function DataCard({ icon: Icon, title, children, source, color = "forest" }) {
                     <Icon size={20} className={c.text} />
                 </div>
                 <div>
-                    <h3 className="font-semibold text-sm">{title}</h3>
+                    <h3 className="font-semibold text-sm text-[var(--foreground)]">{title}</h3>
                     {source && (
                         <span className={`source-badge ${source === "owner" ? "owner" : "auto"}`}>
                             {source === "owner" ? "Owner contributed" : "Auto-aggregated"}
@@ -91,27 +91,27 @@ export default function LandPassport({ property }) {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             {/* Hero */}
             <div className="mb-10">
-                <div className="h-64 sm:h-80 rounded-2xl overflow-hidden mb-6 border border-white/10">
+                <div className="h-64 sm:h-80 rounded-2xl overflow-hidden mb-6 border border-black/10">
                     <PassportMap lat={lat} lng={lng} />
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <div>
-                        <h1 className="font-serif text-3xl sm:text-4xl font-bold mb-2">
+                        <h1 className="font-serif text-3xl sm:text-4xl font-bold mb-2 text-[var(--foreground)]">
                             {property.propertyName}
                         </h1>
-                        <div className="flex flex-wrap items-center gap-3 text-sm text-white/50">
+                        <div className="flex flex-wrap items-center gap-3 text-sm text-black/50">
                             <span className="flex items-center gap-1">
                                 <MapPin size={14} />
                                 {property.address || `${lat.toFixed(4)}, ${lng.toFixed(4)}`}
                             </span>
                             {property.approximateArea && (
-                                <span className="px-2 py-0.5 rounded-full bg-white/5 text-xs">
+                                <span className="px-2 py-0.5 rounded-full bg-black/5 text-xs">
                                     {property.approximateArea} {property.areaUnit}
                                 </span>
                             )}
                             {openData?.bioregion && (
-                                <span className="px-2 py-0.5 rounded-full bg-forest-400/10 text-forest-400 text-xs">
+                                <span className="px-2 py-0.5 rounded-full bg-[#6DB86B]/10 text-[#6DB86B] text-xs">
                                     {openData.bioregion.biome}
                                 </span>
                             )}
@@ -120,14 +120,14 @@ export default function LandPassport({ property }) {
 
                     <button
                         onClick={copyLink}
-                        className="btn btn-sm btn-ghost gap-2 text-white/40 hover:text-white/70"
+                        className="btn btn-sm btn-ghost gap-2 text-black/40 hover:text-black/70"
                     >
                         {copied ? <Check size={14} /> : <Copy size={14} />}
                         {copied ? "Copied!" : "Share"}
                     </button>
                 </div>
 
-                <p className="text-xs text-white/30 mt-2">
+                <p className="text-xs text-black/30 mt-2">
                     {t("lastUpdated", {
                         date: new Date(property.updatedAt || property.createdAt).toLocaleDateString(),
                     })}
@@ -136,8 +136,8 @@ export default function LandPassport({ property }) {
 
             {/* Your Land Section */}
             <section className="mb-12">
-                <h2 className="font-serif text-2xl font-bold mb-6 flex items-center gap-2">
-                    <Leaf size={24} className="text-forest-400" />
+                <h2 className="font-serif text-2xl font-bold mb-6 flex items-center gap-2 text-[var(--foreground)]">
+                    <Leaf size={24} className="text-[#6DB86B]" />
                     {t("sections.yourLand")}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -152,7 +152,7 @@ export default function LandPassport({ property }) {
                                 ))}
                             </div>
                             {property.landUseDescription && (
-                                <p className="text-sm text-white/50 mt-2">
+                                <p className="text-sm text-black/50 mt-2">
                                     {property.landUseDescription}
                                 </p>
                             )}
@@ -167,7 +167,7 @@ export default function LandPassport({ property }) {
                         color="earth"
                     >
                         {property.soilType && (
-                            <p className="text-sm text-white/70 mb-2">{property.soilType}</p>
+                            <p className="text-sm text-black/70 mb-2">{property.soilType}</p>
                         )}
                         {openData?.soil?.properties &&
                             Object.entries(openData.soil.properties)
@@ -175,16 +175,16 @@ export default function LandPassport({ property }) {
                                 .map(([key, data]) => (
                                     <div
                                         key={key}
-                                        className="flex justify-between text-xs text-white/50 py-1 border-b border-white/5 last:border-0"
+                                        className="flex justify-between text-xs text-black/50 py-1 border-b border-black/5 last:border-0"
                                     >
                                         <span>{data.label}</span>
-                                        <span className="text-white/70">
+                                        <span className="text-black/70">
                                             {data.depths?.["0-5cm"]?.value ?? "—"} {data.unit}
                                         </span>
                                     </div>
                                 ))}
                         {!property.soilType && !openData?.soil && (
-                            <p className="text-sm text-white/30">{t("data.noData")}</p>
+                            <p className="text-sm text-black/30">{t("data.noData")}</p>
                         )}
                     </DataCard>
 
@@ -193,11 +193,11 @@ export default function LandPassport({ property }) {
                         <DataCard icon={Droplets} title={t("sections.water")} source="owner" color="ocean">
                             {property.waterSources.map((source, i) => (
                                 <div key={i} className="mb-2 last:mb-0">
-                                    <span className="text-sm text-ocean-400 capitalize font-medium">
+                                    <span className="text-sm text-[#4A90A4] capitalize font-medium">
                                         {source.type}
                                     </span>
                                     {source.description && (
-                                        <p className="text-xs text-white/50">{source.description}</p>
+                                        <p className="text-xs text-black/50">{source.description}</p>
                                     )}
                                 </div>
                             ))}
@@ -209,7 +209,7 @@ export default function LandPassport({ property }) {
                         <DataCard icon={Leaf} title={t("sections.floraFauna")} source="owner">
                             {property.flora?.length > 0 && (
                                 <div className="mb-3">
-                                    <p className="text-xs text-white/40 mb-1 uppercase">Plants</p>
+                                    <p className="text-xs text-black/40 mb-1 uppercase">Plants</p>
                                     <div className="flex flex-wrap gap-1.5">
                                         {property.flora.map((sp, i) => (
                                             <span key={i} className="tag-badge text-xs">
@@ -221,7 +221,7 @@ export default function LandPassport({ property }) {
                             )}
                             {property.fauna?.length > 0 && (
                                 <div>
-                                    <p className="text-xs text-white/40 mb-1 uppercase">Animals</p>
+                                    <p className="text-xs text-black/40 mb-1 uppercase">Animals</p>
                                     <div className="flex flex-wrap gap-1.5">
                                         {property.fauna.map((sp, i) => (
                                             <span key={i} className="tag-badge text-xs">
@@ -239,28 +239,28 @@ export default function LandPassport({ property }) {
             {/* Bioregion Section */}
             {openData?.bioregion && (
                 <section className="mb-12">
-                    <h2 className="font-serif text-2xl font-bold mb-6 flex items-center gap-2">
-                        <Globe2 size={24} className="text-ocean-500" />
+                    <h2 className="font-serif text-2xl font-bold mb-6 flex items-center gap-2 text-[var(--foreground)]">
+                        <Globe2 size={24} className="text-[#4A90A4]" />
                         {t("sections.bioregion")}
                     </h2>
-                    <div className="glass-card p-6 border border-ocean-500/20">
+                    <div className="glass-card p-6 border border-[#4A90A4]/20">
                         <div className="flex items-center gap-3 mb-4">
-                            <span className="px-3 py-1 rounded-full bg-ocean-500/15 text-ocean-400 text-sm font-medium">
+                            <span className="px-3 py-1 rounded-full bg-[#4A90A4]/15 text-[#4A90A4] text-sm font-medium">
                                 {openData.bioregion.realm}
                             </span>
-                            <span className="px-3 py-1 rounded-full bg-forest-400/15 text-forest-400 text-sm font-medium">
+                            <span className="px-3 py-1 rounded-full bg-[#6DB86B]/15 text-[#6DB86B] text-sm font-medium">
                                 {openData.bioregion.biome}
                             </span>
                         </div>
-                        <h3 className="text-lg font-semibold mb-2">
+                        <h3 className="text-lg font-semibold mb-2 text-[var(--foreground)]">
                             {openData.bioregion.name}
                         </h3>
-                        <p className="text-sm text-white/50 leading-relaxed mb-4">
+                        <p className="text-sm text-black/50 leading-relaxed mb-4">
                             {openData.bioregion.description}
                         </p>
                         {openData.bioregion.keySpecies?.length > 0 && (
                             <div>
-                                <p className="text-xs text-white/40 uppercase mb-2">
+                                <p className="text-xs text-black/40 uppercase mb-2">
                                     Key Species
                                 </p>
                                 <div className="flex flex-wrap gap-2">
@@ -272,7 +272,7 @@ export default function LandPassport({ property }) {
                                 </div>
                             </div>
                         )}
-                        <p className="text-xs text-white/20 mt-4">
+                        <p className="text-xs text-black/20 mt-4">
                             Source: {openData.bioregion.source}
                         </p>
                     </div>
@@ -281,8 +281,8 @@ export default function LandPassport({ property }) {
 
             {/* Seasons / Weather */}
             <section className="mb-12">
-                <h2 className="font-serif text-2xl font-bold mb-6 flex items-center gap-2">
-                    <Sun size={24} className="text-earth-400" />
+                <h2 className="font-serif text-2xl font-bold mb-6 flex items-center gap-2 text-[var(--foreground)]">
+                    <Sun size={24} className="text-[#C25B3A]" />
                     {t("sections.seasons")}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -296,14 +296,14 @@ export default function LandPassport({ property }) {
                         >
                             <div className="grid grid-cols-2 gap-3">
                                 <div>
-                                    <p className="text-2xl font-bold text-earth-400">
+                                    <p className="text-2xl font-bold text-[#C25B3A]">
                                         {Math.round(openData.weather.current.temp)}°C
                                     </p>
-                                    <p className="text-xs text-white/50 capitalize">
+                                    <p className="text-xs text-black/50 capitalize">
                                         {openData.weather.current.description}
                                     </p>
                                 </div>
-                                <div className="space-y-1 text-xs text-white/50">
+                                <div className="space-y-1 text-xs text-black/50">
                                     <div className="flex items-center gap-1">
                                         <Droplets size={12} />
                                         {openData.weather.current.humidity}% humidity
@@ -315,7 +315,7 @@ export default function LandPassport({ property }) {
                                 </div>
                             </div>
                             {openData.weather.location && (
-                                <p className="text-xs text-white/20 mt-3">
+                                <p className="text-xs text-black/20 mt-3">
                                     {openData.weather.location.name},{" "}
                                     {openData.weather.location.country}
                                 </p>
@@ -329,24 +329,24 @@ export default function LandPassport({ property }) {
                             <div className="flex items-center gap-3 mb-2">
                                 <span
                                     className={`px-3 py-1 rounded-full text-sm font-bold uppercase ${openData.fireRisk.riskLevel === "critical"
-                                            ? "bg-red-500/20 text-red-400"
-                                            : openData.fireRisk.riskLevel === "high"
-                                                ? "bg-ember-500/20 text-ember-500"
-                                                : openData.fireRisk.riskLevel === "moderate"
-                                                    ? "bg-earth-400/20 text-earth-400"
-                                                    : "bg-forest-400/20 text-forest-400"
+                                        ? "bg-red-500/20 text-red-400"
+                                        : openData.fireRisk.riskLevel === "high"
+                                            ? "bg-[#E8926F]/20 text-[#E8926F]"
+                                            : openData.fireRisk.riskLevel === "moderate"
+                                                ? "bg-[#C25B3A]/20 text-[#C25B3A]"
+                                                : "bg-[#6DB86B]/20 text-[#6DB86B]"
                                         }`}
                                 >
                                     {openData.fireRisk.riskLevel}
                                 </span>
                             </div>
                             {openData.fireRisk.recentFires > 0 && (
-                                <p className="text-xs text-ember-400">
+                                <p className="text-xs text-[#E8926F]">
                                     {openData.fireRisk.recentFires} active fire(s) detected
                                     nearby in the last 30 days
                                 </p>
                             )}
-                            <p className="text-xs text-white/20 mt-2">
+                            <p className="text-xs text-black/20 mt-2">
                                 Source: {openData.fireRisk.source}
                             </p>
                         </DataCard>
@@ -355,10 +355,10 @@ export default function LandPassport({ property }) {
                     {/* Elevation */}
                     {openData?.elevation && (
                         <DataCard icon={Mountain} title={t("sections.terrain")} source="auto" color="earth">
-                            <p className="text-2xl font-bold text-earth-400">
+                            <p className="text-2xl font-bold text-[#C25B3A]">
                                 {openData.elevation.elevation}m
                             </p>
-                            <p className="text-sm text-white/50 capitalize">
+                            <p className="text-sm text-black/50 capitalize">
                                 {openData.elevation.terrain?.replace("_", " ")} terrain
                             </p>
                         </DataCard>
@@ -367,20 +367,20 @@ export default function LandPassport({ property }) {
                     {/* Fire History (owner data) */}
                     {property.fireHistory?.hasHistory && (
                         <DataCard icon={Flame} title="Fire History" source="owner" color="ember">
-                            <p className="text-sm text-white/70">
+                            <p className="text-sm text-black/70">
                                 Last fire: {property.fireHistory.lastFireYear || "Year unknown"}
                             </p>
                             {property.fireHistory.description && (
-                                <p className="text-xs text-white/50 mt-1">
+                                <p className="text-xs text-black/50 mt-1">
                                     {property.fireHistory.description}
                                 </p>
                             )}
                             <span
                                 className={`inline-block mt-2 px-2 py-0.5 rounded-full text-xs font-medium ${property.fireHistory.preparednessStatus === "prepared"
-                                        ? "bg-forest-400/20 text-forest-400"
-                                        : property.fireHistory.preparednessStatus === "partially"
-                                            ? "bg-earth-400/20 text-earth-400"
-                                            : "bg-ember-500/20 text-ember-500"
+                                    ? "bg-[#6DB86B]/20 text-[#6DB86B]"
+                                    : property.fireHistory.preparednessStatus === "partially"
+                                        ? "bg-[#C25B3A]/20 text-[#C25B3A]"
+                                        : "bg-[#E8926F]/20 text-[#E8926F]"
                                     }`}
                             >
                                 {property.fireHistory.preparednessStatus}
@@ -405,14 +405,14 @@ export default function LandPassport({ property }) {
                                     {property.challenges.map((ch) => (
                                         <span
                                             key={ch}
-                                            className="px-2 py-0.5 rounded-full bg-ember-500/15 text-ember-500 text-xs capitalize"
+                                            className="px-2 py-0.5 rounded-full bg-[#E8926F]/15 text-[#E8926F] text-xs capitalize"
                                         >
                                             {ch.replace("_", " ")}
                                         </span>
                                     ))}
                                 </div>
                                 {property.challengeDescription && (
-                                    <p className="text-sm text-white/50">
+                                    <p className="text-sm text-black/50">
                                         {property.challengeDescription}
                                     </p>
                                 )}
@@ -429,14 +429,14 @@ export default function LandPassport({ property }) {
                                     {property.goals.map((g) => (
                                         <span
                                             key={g}
-                                            className="px-2 py-0.5 rounded-full bg-forest-400/15 text-forest-400 text-xs capitalize"
+                                            className="px-2 py-0.5 rounded-full bg-[#6DB86B]/15 text-[#6DB86B] text-xs capitalize"
                                         >
                                             {g}
                                         </span>
                                     ))}
                                 </div>
                                 {property.goalDescription && (
-                                    <p className="text-sm text-white/50">
+                                    <p className="text-sm text-black/50">
                                         {property.goalDescription}
                                     </p>
                                 )}
@@ -449,8 +449,8 @@ export default function LandPassport({ property }) {
             {/* Documents */}
             {property.documents?.length > 0 && (
                 <section className="mb-12">
-                    <h2 className="font-serif text-2xl font-bold mb-6 flex items-center gap-2">
-                        <FileText size={24} className="text-white/50" />
+                    <h2 className="font-serif text-2xl font-bold mb-6 flex items-center gap-2 text-[var(--foreground)]">
+                        <FileText size={24} className="text-black/50" />
                         {t("sections.documents")}
                     </h2>
                     <div className="space-y-2">
@@ -460,13 +460,13 @@ export default function LandPassport({ property }) {
                                 href={doc.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-3 glass-card p-4 hover:bg-white/8 transition-colors group"
+                                className="flex items-center gap-3 glass-card p-4 hover:bg-black/3 transition-colors group"
                             >
-                                <FileText size={16} className="text-white/30" />
-                                <span className="text-sm flex-1">{doc.name}</span>
+                                <FileText size={16} className="text-black/30" />
+                                <span className="text-sm flex-1 text-[var(--foreground)]">{doc.name}</span>
                                 <ExternalLink
                                     size={14}
-                                    className="text-white/20 group-hover:text-forest-400"
+                                    className="text-black/20 group-hover:text-[#6DB86B]"
                                 />
                             </a>
                         ))}
@@ -477,8 +477,8 @@ export default function LandPassport({ property }) {
             {/* Loading indicator for open data */}
             {loadingOpenData && (
                 <div className="text-center py-8">
-                    <span className="loading loading-spinner loading-lg text-forest-400" />
-                    <p className="text-sm text-white/40 mt-3">
+                    <span className="loading loading-spinner loading-lg text-[#6DB86B]" />
+                    <p className="text-sm text-black/40 mt-3">
                         Fetching environmental data for this location...
                     </p>
                 </div>

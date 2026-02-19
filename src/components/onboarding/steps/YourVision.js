@@ -8,7 +8,7 @@ export default function YourVision({ data, updateData }) {
     return (
         <div className="space-y-8">
             <div>
-                <h2 className="font-serif text-3xl font-bold mb-2">
+                <h2 className="font-serif text-3xl font-bold mb-2 text-white">
                     {t("title")}
                 </h2>
                 <p className="text-white/40 text-sm">{t("subtitle")}</p>

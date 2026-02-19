@@ -69,7 +69,7 @@ export default function YourLand({ data, updateData }) {
     return (
         <div className="space-y-8">
             <div>
-                <h2 className="font-serif text-3xl font-bold mb-2">
+                <h2 className="font-serif text-3xl font-bold mb-2 text-white">
                     {tLand("title")}
                 </h2>
                 <p className="text-white/40 text-sm">{tLand("subtitle")}</p>
@@ -89,8 +89,8 @@ export default function YourLand({ data, updateData }) {
                                 key={type}
                                 onClick={() => toggleLandUse(type)}
                                 className={`flex items-center gap-3 p-3.5 rounded-xl border text-left transition-all duration-200 ${selected
-                                        ? "bg-white/10 border-white/30 text-white"
-                                        : "bg-white/3 border-white/8 text-white/50 hover:bg-white/5 hover:border-white/15"
+                                    ? "bg-white/10 border-white/30 text-white"
+                                    : "bg-white/3 border-white/8 text-white/50 hover:bg-white/5 hover:border-white/15"
                                     }`}
                             >
                                 <Icon size={18} />
@@ -117,8 +117,8 @@ export default function YourLand({ data, updateData }) {
                                 key={type}
                                 onClick={() => toggleWater(type)}
                                 className={`flex items-center gap-3 p-3.5 rounded-xl border text-left transition-all duration-200 ${selected
-                                        ? "bg-white/10 border-white/30 text-white"
-                                        : "bg-white/3 border-white/8 text-white/50 hover:bg-white/5 hover:border-white/15"
+                                    ? "bg-white/10 border-white/30 text-white"
+                                    : "bg-white/3 border-white/8 text-white/50 hover:bg-white/5 hover:border-white/15"
                                     }`}
                             >
                                 <Icon size={18} />
