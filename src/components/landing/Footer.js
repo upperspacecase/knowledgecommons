@@ -29,7 +29,7 @@ export default function Footer() {
 
                     {/* Links */}
                     <div className="space-y-4">
-                        <h4 className="eyebrow text-black/40">
+                        <h4 className="eyebrow text-[var(--color-terracotta)]">
                             Links
                         </h4>
                         <div className="space-y-3">
@@ -50,7 +50,7 @@ export default function Footer() {
 
                     {/* Language */}
                     <div className="space-y-4">
-                        <h4 className="eyebrow text-black/40">
+                        <h4 className="eyebrow text-[var(--color-terracotta)]">
                             {t("language")}
                         </h4>
                         <LocaleSwitcher />

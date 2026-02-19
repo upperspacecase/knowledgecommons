@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
     const t = useTranslations("landing.hero");
@@ -17,40 +16,31 @@ export default function Hero() {
             />
 
             {/* Dark gradient overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-black/5" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
 
             {/* Content — bottom-left aligned */}
             <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pb-16 sm:pb-24 pt-48">
-                <div className="max-w-2xl">
-                    <h1 className="headline-xl text-white mb-6">
-                        {t("headline")}
-                    </h1>
+                {/* Headline — large display serif, cream */}
+                <h1 className="headline-xl text-[#F5EDE0] mb-32 sm:mb-40 max-w-2xl">
+                    {t("headline")}
+                </h1>
 
-                    <p className="body-lg text-white/80 mb-4 max-w-xl">
-                        {t("subtitle")}
-                    </p>
-
-                    <p className="body-md text-white/60 mb-10 max-w-lg">
-                        {t("description")}
-                    </p>
-
-                    {/* CTAs */}
-                    <div className="flex flex-col sm:flex-row items-start gap-4">
-                        <Link
-                            href="/contribute"
-                            className="btn-cta !bg-white !text-black hover:!bg-white/90 group"
-                        >
-                            {t("cta")}
-                            <ArrowRight
-                                size={16}
-                                className="group-hover:translate-x-1 transition-transform"
-                            />
-                        </Link>
-                        <Link href="/directory" className="btn-outline-light">
-                            {t("ctaSecondary")}
-                        </Link>
+                {/* Lower content block */}
+                <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
+                    <div className="max-w-lg">
+                        <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#F5EDE0] mb-4 leading-snug">
+                            {t("subtitle")}
+                        </h2>
+                        <p className="body-md text-[#F5EDE0]/70 max-w-md">
+                            {t("description")}
+                        </p>
                     </div>
+
+                    {/* Single pill-outline CTA — bottom right */}
+                    <Link href="/contribute" className="btn-outline-light">
+                        {t("cta")}
+                    </Link>
                 </div>
             </div>
         </section>

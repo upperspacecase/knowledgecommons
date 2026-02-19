@@ -31,8 +31,8 @@ export default function Navbar() {
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-                    ? "bg-[var(--background)]/95 backdrop-blur-xl border-b border-black/5"
-                    : "bg-transparent"
+                ? "bg-[var(--background)]/95 backdrop-blur-xl border-b border-black/5"
+                : "bg-transparent"
                 }`}
         >
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -47,7 +47,7 @@ export default function Navbar() {
                             <div className={`w-5 h-0.5 rounded-full transition-colors ${showLight ? "bg-white/80" : "bg-black/60"
                                 }`} />
                         </div>
-                        <span className={`font-serif text-xl font-bold tracking-tight transition-colors ${showLight ? "text-white" : "text-[var(--foreground)]"
+                        <span className={`font-serif text-xl tracking-tight transition-colors ${showLight ? "text-white" : "text-[var(--foreground)]"
                             }`}>
                             {t("siteTitle")}
                         </span>
@@ -60,12 +60,12 @@ export default function Navbar() {
                                 key={link.href}
                                 href={link.href}
                                 className={`text-xs font-semibold uppercase tracking-widest transition-colors ${showLight
-                                        ? pathname === link.href
-                                            ? "text-white"
-                                            : "text-white/60 hover:text-white"
-                                        : pathname === link.href
-                                            ? "text-[var(--foreground)]"
-                                            : "text-black/50 hover:text-[var(--foreground)]"
+                                    ? pathname === link.href
+                                        ? "text-white"
+                                        : "text-white/60 hover:text-white"
+                                    : pathname === link.href
+                                        ? "text-[var(--foreground)]"
+                                        : "text-black/50 hover:text-[var(--foreground)]"
                                     }`}
                             >
                                 {link.label}
@@ -74,10 +74,7 @@ export default function Navbar() {
                         <LocaleSwitcher />
                         <Link
                             href="/contribute"
-                            className={`btn-cta !py-2 !px-5 !text-xs ${showLight
-                                    ? "!bg-white !text-black hover:!bg-white/90"
-                                    : ""
-                                }`}
+                            className="btn-terracotta"
                         >
                             {t("actions.createPassport")}
                         </Link>
@@ -112,7 +109,7 @@ export default function Navbar() {
                         <div className="px-4 pt-2">
                             <Link
                                 href="/contribute"
-                                className="btn-cta w-full justify-center !text-xs"
+                                className="btn-terracotta w-full justify-center"
                                 onClick={() => setMenuOpen(false)}
                             >
                                 {t("actions.createPassport")}

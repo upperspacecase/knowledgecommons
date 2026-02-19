@@ -32,7 +32,7 @@ export default function HowItWorks() {
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
                 {/* Eyebrow + Headline */}
                 <div className="max-w-2xl mb-16">
-                    <p className="eyebrow text-black/40 mb-4">
+                    <p className="eyebrow text-[var(--color-terracotta)] mb-4">
                         How It Works
                     </p>
                     <h2 className="headline-lg text-[var(--foreground)]">
@@ -48,8 +48,8 @@ export default function HowItWorks() {
                             <div
                                 key={key}
                                 className={`editorial-card relative transition-all duration-700 ${visible
-                                        ? "opacity-100 translate-y-0"
-                                        : "opacity-0 translate-y-8"
+                                    ? "opacity-100 translate-y-0"
+                                    : "opacity-0 translate-y-8"
                                     }`}
                                 style={{ transitionDelay: `${i * 150}ms` }}
                             >

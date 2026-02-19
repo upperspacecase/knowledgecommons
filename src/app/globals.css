@@ -13,10 +13,12 @@
 
   /* One Earth palette — light editorial */
   --color-cream: #F5F0E8;
+  --color-cream-text: #F5EDE0;
   --color-warm-white: #FAF7F2;
   --color-sand: #EDE6D8;
   --color-green-accent: #6DB86B;
   --color-green-light: #A8D5A2;
+  --color-terracotta: #C25B3A;
   --color-coral: #E8926F;
   --color-peach: #F0A882;
 }
@@ -152,19 +154,41 @@ body {
   gap: 0.5rem;
   padding: 0.875rem 2rem;
   background: transparent;
-  color: #FFFFFF;
-  font-size: 0.85rem;
+  color: #F5EDE0;
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   border-radius: 9999px;
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border: 1.5px solid #F5EDE0;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .btn-outline-light:hover {
-  border-color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Terracotta CTA — pill button for navbar */
+.btn-terracotta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.5rem;
+  background: var(--color-terracotta);
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.btn-terracotta:hover {
+  background: #A94E32;
+  transform: translateY(-1px);
 }
 
 /* ============================
@@ -173,7 +197,7 @@ body {
 .content-card {
   position: relative;
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: 0.25rem;
 }
 
 .content-card .card-image {

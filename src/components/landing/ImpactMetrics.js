@@ -61,7 +61,7 @@ export default function ImpactMetrics() {
         <section className="section-padding">
             <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
                 <div className="max-w-2xl mb-16">
-                    <p className="eyebrow text-black/40 mb-4">
+                    <p className="eyebrow text-[var(--color-terracotta)] mb-4">
                         Impact
                     </p>
                     <h2 className="headline-lg text-[var(--foreground)]">
